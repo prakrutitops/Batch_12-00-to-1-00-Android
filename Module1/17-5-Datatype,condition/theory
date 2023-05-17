@@ -1,0 +1,55 @@
+1)
+JDK->Download Install
+Path Set
+C:\Program Files\Java\jdk1.8.0_191\bin
+
+2)
+IntelijIDEA
+Community Edition
+
+3)Kotlin Extension - .kt
+
+4)
+
+Structure ->
+
+//Method
+void main()
+{
+	
+}
+
+//functions
+fun main()
+{
+	
+}
+
+
+
+->Program's execution will start with main function
+
+
+
+data type
+
+int -> numeric
+float -> decimal
+char -> single character
+double-> long decimal
+boolean->true,false
+string->moRE than one character
+
+
+keywords:
+var -> variable -> value can change
+val -> constant -> value can not change
+
+\n  -new line
+\t  -new tab
+
+condition check
+
+
+
+
