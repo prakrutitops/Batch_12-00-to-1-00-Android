@@ -1,0 +1,42 @@
+OOP:Object Oriented Programming
+oop concepts:
+
+features:
+
+1)object:Any entity which has own state and behaviour
+ex: pen,paper etc..
+
+2)class:Collection of objects that is called class
+ex: human body 
+
+3)abstraction:Hiding internal details ans showing functionalities
+ex: Login Page
+
+4)encapsualation:Wrapping up of data or binding of data
+ex: Capsule
+
+5)inheritance: when one object acquire all the properties and behaiour of parent class
+ex: father-son
+
+6)polymorphism:Many ways to perform anything
+ex: road ways
+
+-----------------------
+object creation
+call value through object via function
+--------------------------------------
+constructor:when method having a same as a classname
+
+types of constructor
+1)default->primary constructor
+2)parameterized->secondary constructor
+
+Inheritance:
+
+parent - super - base
+child -sub - derived
+
+
+
+
+
