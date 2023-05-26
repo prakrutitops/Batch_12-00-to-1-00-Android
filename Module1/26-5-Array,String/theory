@@ -1,0 +1,16 @@
+Array:Collection of elements
+index- 0
+
+int marks[5]//c
+int marks =new int[5];//java
+
+arrayof()
+
+var mystring ="Welcome To Tops"//Literal String
+
+var mystring = String("jfksdj")//Object String
+
+
+Null Saftey:
+!!
+?.
