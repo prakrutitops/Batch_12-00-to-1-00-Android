@@ -1,0 +1,32 @@
+1)
+method overloading:Two or more methods(functions) having a same name  but number of parameters are diffrent
+
+2)
+method overriding:Two or more methods(functions) having a same name  and number of parameters are also same
+
+enumerations - enum
+
+5 value
+
+fname
+lname
+email
+mobile
+password
+repassword
+
+
+password.repasdword = equal
+
+file create data write
+
+
+=not equal 
+
+msg not eligible
+
+
+Your Firstname is : xyz
+Your Lastname is: xyz
+
+
