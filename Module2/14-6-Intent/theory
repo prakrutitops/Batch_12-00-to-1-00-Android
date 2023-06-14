@@ -1,0 +1,50 @@
+1) app:
+manifest->Launching
+AndroidManifest.xml
+
+java
+pack -1->Kotlin File
+pack -2
+pack -3
+
+res
+drawable->images
+layout->xml file
+mipmap->images[inbuilt]
+values->string,color,style
+xml->xml files
+
+
+2) gradle scripts:
+build.gradle->Project
+build.gradle->Module
+proguard-rules->security at the time of launching
+gradle.properties->project properties
+grade-wrapper.properties->gradle version
+local.properties->sdk location
+settings.gradle->settings
+
+
+=============================
+
+Designing ->XML
+Coding ->Kotlin
+
+
+
+Tops Image
+
+Tops Technologies-Rajkot
+
+Phone Number->Button
+
+Intent:Switching from one activity to another activity 
+
+Types of Intent
+1)Explicit:Switching from one activity to another activity in same application
+2)Implicit:Switching from one activity to another activity between diffrent application
+
+
+
+
+
