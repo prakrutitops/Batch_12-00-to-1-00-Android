@@ -1,0 +1,12 @@
+1. create a listview in main xml file
+2. Create a design file as per your requirement
+3. Create a model class as per the design file
+4. viewbinding of data in main kt file
+5. decalre mutablelist and initialize mutablelist
+6. set data in model through set
+7. create an adpater file 
+	1->return list size
+	2->return position
+	3->return position in long
+	4->inflate view[design file] [get data through model or list]
+8.call adapter in main kt file and display data in listview
