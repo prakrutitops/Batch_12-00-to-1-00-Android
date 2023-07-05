@@ -1,0 +1,26 @@
+fragment:multiple screens[fragment] on one activity
+
+=> fragment will be always launch by activity
+
+types of fragment
+1)static => Launching =>XML
+2)dynamic=> Launching =>Kotlin
+
+Transaction
+
+A to A
+A to F
+F to A
+F to F
+
+Destination Activity -> Intent
+Destination Fragment -> manager
+
+applicationcontext -> requireactivity()
+!!
+findviewbyid->view.findviewbyid
+view.
+activity.
+
+
+
