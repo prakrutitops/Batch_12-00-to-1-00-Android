@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/nav_mob"
+        android:icon="@drawable/baseline_phone_android_24"
+        android:title="Mobile"/>
+
+    <item
+        android:id="@+id/nav_tv"
+        android:icon="@drawable/baseline_phone_android_24"
+        android:title="TV"/>
+
+    <item
+        android:id="@+id/nav_ac"
+        android:icon="@drawable/baseline_phone_android_24"
+        android:title="AC"/>
+
+
+</menu>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_mob">
+
+    <fragment
+        android:id="@+id/nav_mob"
+        android:name="com.example.myapplication.fragment.PhoneFragment"
+        android:label="@string/title_mob"
+        tools:layout="@layout/fragment_phone" />
+
+    <fragment
+        android:id="@+id/nav_tv"
+        android:name="com.example.myapplication.fragment.TVFragment"
+        android:label="@string/title_tv"
+        tools:layout="@layout/fragment_t_v" />
+
+    <fragment
+        android:id="@+id/nav_ac"
+        android:name="com.example.myapplication.fragment.ACFragment"
+        android:label="@string/title_ac"
+        tools:layout="@layout/fragment_a_c" />
+
+</navigation>
