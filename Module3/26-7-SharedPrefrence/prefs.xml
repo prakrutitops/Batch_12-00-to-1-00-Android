@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+ <PreferenceCategory
+     android:title="Login Information">
+
+    <EditTextPreference
+        android:key="e1"
+        android:title="Enter Name"
+        android:summary="Enter Your Name"
+        />
+
+    <EditTextPreference
+        android:key="e2"
+        android:title="Enter Email"
+        android:summary="Enter Your Email"
+        />
+ </PreferenceCategory>
+
+
+<PreferenceCategory
+    android:title="Other Information">
+
+    <CheckBoxPreference
+        android:key="c1"
+        android:title="Rememeber me"
+        android:summary="please select value"/>
+
+    <ListPreference
+        android:key="list"
+        android:title="Select Language"
+        android:entries="@array/language"
+        android:summary="Select Any one"
+        android:entryValues="@array/languagevalues"/>
+
+</PreferenceCategory>
+
+</PreferenceScreen>
