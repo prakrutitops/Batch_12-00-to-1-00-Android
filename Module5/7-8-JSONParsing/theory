@@ -1,0 +1,24 @@
+JSON - Javascript object notation - format
+
+JSON -> online db-> Mysql
+
+MYSQL-> API  -> JSON Format
+
+JSON Parsing
+
+[] -> jsonarray
+
+{} ->jsonobject
+
+[{},{}]
+
+{[{},{}]}
+
+[]
+
+{}
+
+{[]}
+
+
+
