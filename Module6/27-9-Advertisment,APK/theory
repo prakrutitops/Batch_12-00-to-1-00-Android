@@ -1,0 +1,68 @@
+Advertisment:
+
+1) banner ad
+2) interstial ad->full screen
+3) video ad
+4) native ad
+
+
+
+Logo -> 512*512
+Banner->1024*768
+Screenshots->
+Short Description
+Long Description
+APK->release
+Youtube Video Link
+
+
+App ->Reject->1
+App ->Reject->2
+App ->Same
+
+Service
+Receiver
+Sensor
+Bluetooth
+Wifi
+
+E-commerce Project
+
+User App:
+
+->Using Retrofit 
+->API(PHP)
+->Json Parsing
+1)Splash
+2)Login,Signup
+3)Signup
+4)Login
+5)SharedPrefrence
+6)Dashboard Screen
+7)Logout
+8)Category Wise Data View
+9)Click -> Open data according to category
+10)Product Select 
+->Product Show in Full Screen
+11)Add to wishlist
+12)Add to cart
+13)Wishlist to cart
+14)Cart ->Proceed to Payment
+15)Generated Signed APK
+
+
+Admin App[Web,App]:
+
+Admin Login 
+Product Add According to category wise
+Product Image
+Product Description
+
+
+
+
+
+
+
+
+
