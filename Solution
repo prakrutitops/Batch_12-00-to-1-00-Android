@@ -1,0 +1,180 @@
+1.
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter number 1"/>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter number 2"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:id="@+id/calculateButton"/>
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
+
+2.
+import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.AdapterView
+import android.widget.TextView
+
+class MainActivity : AppCompatActivity() {
+    private lateinit var dbHelper: DatabaseHelper
+    private lateinit var spinner: Spinner
+    private lateinit var editText1: EditText
+    private lateinit var editText2: EditText
+    private lateinit var resultTextView: TextView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Initialize your UI components
+        dbHelper = DatabaseHelper(this)
+        editText1 = findViewById(R.id.editText1)
+        editText2 = findViewById(R.id.editText2)
+        spinner = findViewById(R.id.spinner)
+        resultTextView = findViewById(R.id.resultTextView)
+
+        // Populate the Spinner with operation options
+        val operations = arrayOf("Addition", "Subtraction", "Multiplication", "Division")
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, operations)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.adapter = adapter
+
+        // Set a click listener for the Calculate button
+        val calculateButton = findViewById<Button>(R.id.calculateButton)
+        calculateButton.setOnClickListener {
+            performCalculation()
+        }
+    }
+
+    private fun performCalculation() {
+        val num1 = editText1.text.toString().toDouble()
+        val num2 = editText2.text.toString().toDouble()
+        val selectedOperation = spinner.selectedItem.toString()
+
+        // Perform the selected operation and show the result in the TextView
+        // Handle database operations here to store the result
+        val result = when (selectedOperation) {
+            "Addition" -> num1 + num2
+            "Subtraction" -> num1 - num2
+            "Multiplication" -> num1 * num2
+            "Division" -> if (num2 != 0.0) num1 / num2 else 0.0
+            else -> 0.0
+        }
+
+        resultTextView.text = "Result: $result"
+
+        // Store the operation and result in the database using your Database Helper
+        // dbHelper.insertOperation(selectedOperation, num1, num2, result)
+    }
+}
+
+3.DbHelper Class
+import android.content.ContentValues
+import android.content.Context
+import android.database.sqlite.SQLiteDatabase
+import android.database.sqlite.SQLiteOpenHelper
+
+class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+
+    companion object {
+        private const val DATABASE_NAME = "ArithmeticOperations.db"
+        private const val DATABASE_VERSION = 1
+        private const val TABLE_NAME = "Operations"
+        private const val COLUMN_ID = "id"
+        private const val COLUMN_OPERATION = "operation"
+        private const val COLUMN_NUM1 = "num1"
+        private const val COLUMN_NUM2 = "num2"
+        private const val COLUMN_RESULT = "result"
+    }
+
+    override fun onCreate(db: SQLiteDatabase) {
+        val createTableQuery = "CREATE TABLE $TABLE_NAME " +
+                "($COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "$COLUMN_OPERATION TEXT, " +
+                "$COLUMN_NUM1 REAL, " +
+                "$COLUMN_NUM2 REAL, " +
+                "$COLUMN_RESULT REAL);"
+        db.execSQL(createTableQuery)
+    }
+
+    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+        // Handle database upgrades here
+    }
+
+    fun insertOperation(operation: String, num1: Double, num2: Double, result: Double): Long {
+        val values = ContentValues()
+        values.put(COLUMN_OPERATION, operation)
+        values.put(COLUMN_NUM1, num1)
+        values.put(COLUMN_NUM2, num2)
+        values.put(COLUMN_RESULT, result)
+
+        val db = this.writableDatabase
+        val newRowId = db.insert(TABLE_NAME, null, values)
+        db.close()
+
+        return newRowId
+    }
+}
+
+
+4. Perform calculation method in  mainactivity file
+
+private fun performCalculation() {
+    val num1 = editText1.text.toString().toDouble()
+    val num2 = editText2.text.toString().toDouble()
+    val selectedOperation = spinner.selectedItem.toString()
+
+    val result = when (selectedOperation) {
+        "Addition" -> num1 + num2
+        "Subtraction" -> num1 - num2
+        "Multiplication" -> num1 * num2
+        "Division" -> if (num2 != 0.0) num1 / num2 else 0.0
+        else -> 0.0
+    }
+
+    // Show the result in the TextView
+    resultTextView.text = "Result: $result"
+
+    // Store the operation and result in the database
+    val newRowId = dbHelper.insertOperation(selectedOperation, num1, num2, result)
+
+    if (newRowId != -1L) {
+        // Data successfully inserted into the database
+        Toast.makeText(this, "Operation saved to database with ID: $newRowId", Toast.LENGTH_SHORT).show()
+    } else {
+        Toast.makeText(this, "Failed to save operation to the database", Toast.LENGTH_SHORT).show()
+    }
+}
+
+
