@@ -1,0 +1,80 @@
+10 9 8 7 
+6 5 4 
+3 2 
+1 
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    int current = 10;
+    int row, col;
+
+    for (row = 1; row <= 4; row++) {
+        for (col = 1; col < row; col++) {
+            printf(""); // Print two spaces for formatting
+        }
+        for (col = 1; col <= 5 - row; col++) {
+            printf("%d ", current);
+            current--;
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+--------------------------------------------------
+10 9 8 7 
+4 5 6
+3 2
+1 
+
+
+fun main() {
+    var value = 10
+    for (i in 1..4) {
+        when (i) {
+            2 -> {
+                for (k in 4..6) {
+                    print("$k ")
+                }
+            }
+            3 -> {
+                print("3 2 ")
+            }
+            4 -> {
+                print("1 ")
+            }
+            else -> {
+                for (j in 1..5 - i) {
+                    print("$value ")
+                    value--
+                }
+            }
+        }
+        println()
+    }
+}
+
+------------------------------------------------
+
+fun main() {
+    val pattern = Array(4) { IntArray(4) }
+
+    pattern[0] = intArrayOf(10, 9, 8, 7)
+    pattern[1] = intArrayOf(4, 5, 6)
+    pattern[2] = intArrayOf(3, 2, 0, 0)
+    pattern[3] = intArrayOf(1, 0, 0, 0)
+
+    for (row in pattern) {
+        for (value in row) {
+            if (value != 0) {
+                print("$value ")
+            }
+        }
+        println()
+    }
+}
